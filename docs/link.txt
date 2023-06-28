@@ -1,0 +1,7 @@
+https://interestingengineering.com/video/make-your-very-own-arduino-based-color-candy-sorting-machine?fbclid=IwAR1ciJEiAiNstTceg8uyDEEUfjcn7gF6dF88VoxhpO9KsEjCqt-IhE8sVMY
+
+https://www.youtube.com/watch?v=Qeyvpp_-dkk&ab_channel=MrInnovative
+
+Tham khảo:
+
+https://github.com/yumin-chen/skittle-color-sorter
