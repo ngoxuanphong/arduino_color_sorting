@@ -344,16 +344,12 @@ namespace Color_Sorting_Arduino {
 
 		}
 #pragma endregion
-	private: void findPort(void)
+	private: void findPort(void) // Tìm cổng COM
 	{
 		array<Object^>^ objectArray = serialPort1->GetPortNames();
 		this->comboBox1->Items->AddRange(objectArray);
 	}
-private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-	this->serialPort1->ReadLine();
-}
-private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void butConnect_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->comboBox1->Text == String::Empty) {
 		MessageBox::Show("Please select port settings");
@@ -377,8 +373,7 @@ private: System::Void butConnect_Click(System::Object^ sender, System::EventArgs
 		}
 	}
 }
-private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void butStop_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->serialPort1->IsOpen) {
 		this->serialPort1->WriteLine("T");
@@ -397,9 +392,8 @@ private: System::Void butRESET(System::Object^ sender, System::EventArgs^ e) {
 		this->label2->Text = "STOPPED";
 	}
 }
-private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
-}
 
+// Hàm đọc dữ liệu theo thời gian thực
 private: System::Void serialPort1_DataReceived(System::Object^ sender,
 	System::IO::Ports::SerialDataReceivedEventArgs^ e) {
 	RxString = serialPort1->ReadExisting();
@@ -419,6 +413,6 @@ private: System::Void DisplayText(System::Object^ sender, System::EventArgs^ e) 
 
 	}
 }
-
+0--0001030405
 };
 }

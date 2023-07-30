@@ -1,4 +1,5 @@
 #include <Servo.h>
+
 #define S0 2 // RGB sensor
 #define S1 3 // RGB sensor
 #define S2 4 // RGB sensor
@@ -14,7 +15,6 @@ int listSize = sizeof(myList) / sizeof(myList[0]); // Lấy kích thước mản
 
 const int dirPin = 12; // Dây cam, động cơ bước chân DIR
 const int stepPin = 13; // Dây Tím, động cơ bước chân DIR
-const int stepsPerRevolution = 200;
 
 void setup() {
     // Setting RGB sensor pins as OUTPUT, INPUT
@@ -76,7 +76,7 @@ int runcode() {
   delay(500); // Delay 0.5s
 }
 
-// Hàm loop
+// Hàm lặp
 void loop() {
   String dulieu_temp= Serial.readString(); // Đọc dữ liệu từ máy tính
   if (dulieu_temp != "") {
@@ -104,6 +104,7 @@ void loop() {
   if(dulieu.startsWith("B")) { 
     runcode();
   }
+  // Nếu nhận được dữ liệu từ máy tính thì reset số lượng màu về 0
   if(dulieu.startsWith("R")) { 
     for (int i = 0; i < listSize; i++) {
       myList[i] = 0;
